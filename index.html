@@ -33,7 +33,7 @@
   </style>
 </head>
 
-<body class="bg-base-200" x-data="storeApp">
+<body class="bg-base-200 overflow-x-hidden" x-data="storeApp">
   <!-- TOP-BAR LOGO + SEARCH -->
   <div class="navbar md:p-6 p-2 pt-4 pb-1 bg-base-100">
     <div class="flex flex-1 gap-4">
@@ -819,7 +819,7 @@
     <div
       class="fixed inset-x-0 bottom-0 z-50 md:hidden
             transition-all duration-200
-            ease-out"
+            ease-out pb-[env(safe-area-inset-bottom)]" 
       :class="ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'">
 
       <div class="bg-base-100 border-t border-base-200 shadow-2xl
