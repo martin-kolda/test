@@ -1,24 +1,15 @@
 <!doctype html>
-<html data-theme="max" class="bg-blue-200 border-1 m-0 p-0">
+<html data-theme="max" class="bg-green-200 border-1 m-0 p-0">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Prototype prototype</title>
 
   <!-- CDN / dependecies -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/2c7f1c6cae.js" crossorigin="anonymous"></script>   
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="./theme/max-tokens.css"> 
-  <script> // cannot be loaded by classic link
-    fetch('./theme/tw-mapping.css', { cache: 'no-store' }).then(r => r.text()).then(css => {const s = document.createElement('style');s.type = 'text/tailwindcss';s.textContent = css;document.head.appendChild(s);});
-  </script>
+
   <link rel="stylesheet" href="./theme/max.css" type="text/css">
-  <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>  
+
   <style>
 
   @keyframes slideInLeft  { from { transform: translateX(-6%); opacity: .01 } to { transform: translateX(0); opacity: 1 } }
