@@ -34,18 +34,10 @@
 </head>
 
 <body class="bg-base-200" x-data="storeApp">
-
-
-  <button class="lg:hidden btn btn-ghost" @click="$store.menu.openAt()">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-
-
-
   <!-- TOP-BAR LOGO + SEARCH -->
   <div class="navbar md:p-6 p-2 pt-4 pb-1 bg-base-100">
     <div class="flex flex-1 gap-4">
-      <button class="btn btn-primary w-[46px] h-[46px] btn-lg btn-square max-gradient inline-flex md:hidden">
+      <button class="btn btn-primary w-[46px] h-[46px] btn-lg btn-square max-gradient inline-flex md:hidden" @click="$store.menu.openAt()">
         <img alt="My Account" class="relative h-[26px] w-[27px]" src="./icons/Bars.svg" />
       </button>
       <svg viewBox="0 0 137 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-[46px] md:h-[56px] shrink-0">
@@ -66,7 +58,7 @@
     <!-- TOP-BAR QUICK ACTIONS -->
     <div class="flex pl-4 pr-4">
 
-      <button type="button" class="btn btn-link hidden md:flex items-center gap-2 p-2 md:p-4 group no-underline hover:!no-underline focus-visible:!no-underline">
+      <button type="button" class="btn btn-link hidden lg:flex items-center gap-2 p-2 md:p-4 group no-underline hover:!no-underline focus-visible:!no-underline">
         <i class="fa-classic fa-xl fa-regular fa-map-location-dot"></i>
         <span class="hidden lg:block block underline-offset-2 decoration-1 decoration-current group-hover:underline group-focus-visible:underline text-secondary">
           Mapa lékáren a boxů
@@ -148,7 +140,7 @@
   </div>
 
   <!-- MOBILE ONLY SEARCH -->
-  <div class="navbar flex md:hidden text-primary-content h-12 p-2 pt-0">
+  <div class="navbar flex md:hidden text-primary-content h-12 p-2 pt-0 bg-white mb-6">
     <label class="input input-bordered rounded-full flex items-center gap-2 w-full" aria-label="Vyhledávání">                
       <svg class="h-[20px] w-[20px] text-gray-500" viewBox="0 0 26 26" fill="currentColor" aria-hidden="true">
         <path d="M18.6966 10.9427C18.6966 6.47173 15.0386 2.81369 10.5677 2.81369C6.09673 2.81369 2.43869 6.47173 2.43869 10.9427C2.43869 15.4136 6.09673 19.0716 10.5677 19.0716C15.0386 19.0716 18.6966 15.4136 18.6966 10.9427ZM17.1216 19.224C15.3434 20.6466 13.0572 21.5103 10.5677 21.5103C4.72496 21.5103 0 16.7854 0 10.9427C0 5.09996 4.72496 0.375 10.5677 0.375C16.4104 0.375 21.1353 5.09996 21.1353 10.9427C21.1353 13.4322 20.2716 15.7184 18.849 17.4966L25.6571 24.3047C26.1143 24.7619 26.1143 25.5748 25.6571 26.0321C25.1998 26.4893 24.3869 26.4893 23.9297 26.0321L17.1216 19.224Z"/>          
@@ -192,16 +184,16 @@
 <!-- ROUTE == PRODUCTS -->
 <section x-show="is('products')" x-cloak>
 <!-- PAGE CONTENT -->  
-<h1 class="text-3xl lg:w-10/12 sm:w-11/12 pl-4 mx-auto">Zdraví a léky</h1>
+<h1 class="text-3xl w-11/12 lg:w-10/12 pl-0 md:pl-4 mx-auto">Zdraví a léky</h1>
 
 <!-- CATEGORIES GRID -->
 <div x-data="categoriesList" x-cloak class="sm:w-11/12 lg:w-10/12 mx-auto">
-  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4">
+  <div class="grid gap-2 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4">
     
     <template x-for="cat in categories" :key="cat.name">
-      <a class="card card-side items-center shadow-sm hover:shadow-md transition">
+      <a class="card card-side items-center shadow-sm hover:shadow-md bg-white transition cursor-pointer h-14 md:h-auto">
         <figure class="p-2 shrink-0 ">
-          <div class="h-16 w-16 rounded bg-base-200 overflow-hidden grid place-content-center">
+          <div class="h-10 md:h-16 w-10 md:w-16 rounded bg-base-200 overflow-hidden grid place-content-center">
             <img
               :src="imageUrl(cat)"
               :alt="cat.name"
@@ -345,7 +337,7 @@
 
 <!-- PAGINATION + LOAD MORE -->
 <div x-show="!isLoading && (totalPages() > 1 || canLoadMoreFirstPage())"
-     class="mt-6 flex items-center justify-between gap-4 flex-wrap lg:w-10/12 mx-auto p-4">
+     class="mt-6 flex items-center justify-between gap-4 flex-wrap w-11/12 lg:w-10/12 mx-auto p-4">
   <!-- left: range -->
   <div class="text-sm opacity-70">
     <span x-text="rangeLabel()"></span>
@@ -373,10 +365,10 @@
   </button>
 </div>
 </div>
-<div class="w-10/12 mx-auto p-4 pt-12 pb-12">V kategorii Zdraví a léky naleznete volně prodejné léčivé přípravky, které pomáhají při různých obtížích. Jsou to například léky proti bolesti, při rýmě či kašli, na zvýšenou teplotu nebo při chřipce a nachlazení. Léčbu těmito přípravky zvládnete sami doma. V případě opakujících se nebo déle přetrvávajících obtíží je vždy na místě vyhledat pomoc lékaře. O vhodném léku se nejprve poraďte s lékárníkem.</div>
+<div class="w-11/12 lg:w-10/12 mx-auto p-4 pt-12 pb-12">V kategorii Zdraví a léky naleznete volně prodejné léčivé přípravky, které pomáhají při různých obtížích. Jsou to například léky proti bolesti, při rýmě či kašli, na zvýšenou teplotu nebo při chřipce a nachlazení. Léčbu těmito přípravky zvládnete sami doma. V případě opakujících se nebo déle přetrvávajících obtíží je vždy na místě vyhledat pomoc lékaře. O vhodném léku se nejprve poraďte s lékárníkem.</div>
 </section>
 
-<!-- ROUTE == DETAIL -->
+<!-- ROUTE == PRODUCT DETAIL -->
 <section x-show="is('product')" x-cloak>
   <div x-data="productDetail({ fetchUrl: 'data/product.json' })" class="mx-auto w-auto md:w-11/12 lg:w-8/12 p-4 py-6">
 
@@ -814,9 +806,15 @@
  </div> 
       
     </section>
-
+  
+    <a href="#/products"
+    class="font-medium text-max-blue-600 group inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded my-8">
+   <i class="fa-solid fa-arrow-left fa-sm" aria-hidden="true"></i>
+   <span class="group-hover:underline group-focus-visible:underline underline-offset-2">
+    Zpět na výpis produktů
+   </span>
+  </a>
    
-      <a href="#/products" class="font-medium text-max-blue-600 hover:underline pt-12 inline-block">Zpět na výpis produktů</a>
     <!-- Mobile sticky CTA bar -->
     <div
       class="fixed inset-x-0 bottom-0 z-50 md:hidden
@@ -867,7 +865,7 @@
 
 <!-- FOOTER -->
 <div class="block bg-gray-200">
-<footer class="footer sm:footer-horizontal p-12 pl-4 pr-4 mx-auto w-10/12">
+<footer class="footer footer-horizontal hidden lg:grid py-12 mx-auto w-11/12 lg:w-10/12 px-4">
   <nav>
       <h6 class="footer-title">Services</h6>
       <a class="link link-hover">Branding</a>
@@ -901,11 +899,32 @@
       <a class="link link-hover">Cookie policy</a>
     </nav>
   </footer>
-  <footer class="footer sm:footer-horizontal footer-left pl-4 pr-4 mx-auto w-10/12 text-base-content p-4">
-    <aside>
-      <p>Copyright ©2025 - All right reserved Dr. Max</p>
+  <footer class="footer footer-horizontal p-4 pb-24 lg:pb-6 pt-10 lg:pt-4 mx-auto w-11/12 lg:w-10/12 text-base-content">
+    <aside class="w-full">
+      <p class="text-sm opacity-70">© 2025 Dr. Max — All rights reserved</p>
+  
+      <!-- contact row -->
+      <address class="not-italic mt-2">
+        <p class="flex flex-wrap items-center gap-y-2 gap-x-6">
+          <a href="tel:+420516770100"
+             class="group inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded">
+            <i class="fa-solid fa-phone fa-sm" aria-hidden="true"></i>
+            <span class="group-hover:underline group-focus-visible:underline underline-offset-2">
+              +420 516 770 100
+            </span>
+          </a>
+  
+          <a href="mailto:info@drmax.cz"
+             class="group inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded">
+            <i class="fa-solid fa-envelope fa-sm" aria-hidden="true"></i>
+            <span class="group-hover:underline group-focus-visible:underline underline-offset-2">
+              info@drmax.cz
+            </span>
+          </a>
+        </p>
+      </address>
     </aside>
-  </footer> 
+  </footer>
 </div>
 
 
@@ -1690,7 +1709,7 @@ _onRoute() {
                     <div class="mt-3 text-center">
                       <div class="font-mono text-lg tracking-widest">1234 5678 9012</div>
                       <div class="mt-2 bg-white h-14 rounded-sm flex items-center justify-center">
-                        <img src="./images/barcode.png" alt="Čárový kód" class="h-14">
+                        <img src="./images/barcode.png" alt="Čárový kód" class="h-16 w-auto">
                       </div>
                     </div>
                   </div>
