@@ -32,7 +32,7 @@
   </style>
 </head>
 
-<body class="bg-base-200 overflow-x-hidden" x-data="storeApp">
+<body class="bg-red-200 overflow-x-hidden border-1" x-data="storeApp">
   <!-- TOP-BAR LOGO + SEARCH -->
 <div class="navbar md:p-6 p-2 pt-4 pb-1 bg-base-100 overflow-x-hidden">
   <!-- left: menu + logo + (desktop) search -->
@@ -824,38 +824,7 @@
    </span>
   </a>
    
-    <!-- Mobile sticky CTA bar -->
-    <div
-      class="fixed inset-x-0 bottom-0 z-50 md:hidden
-            transition-all duration-200
-            ease-out pb-[env(safe-area-inset-bottom)]" 
-      :class="ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'">
 
-      <div class="bg-base-100 border-t border-base-200 shadow-2xl
-                  px-4 py-3
-                  pb-[calc(env(safe-area-inset-bottom,0px)+0.75rem)]">
-        <div class="flex items-center justify-between gap-3">
-          <!-- price -->
-          <div class="flex flex-col leading-tight">
-            <!-- discounted -->
-            <span x-show="hasDiscount()" class="text-lg font-extrabold text-error"
-                  x-text="formatPrice(priceNow())"></span>
-            <span x-show="hasDiscount()" class="text-xs line-through text-base-content/60 -mt-0.5"
-                  x-text="formatPrice(priceOriginal())"></span>
-
-            <!-- regular -->
-            <span x-show="!hasDiscount()" class="text-lg font-extrabold"
-                  x-text="formatPrice(priceOriginal())"></span>
-          </div>
-
-          <!-- CTA -->
-          <button class="btn btn-primary btn-sm min-w-28"
-                  @click="addToCartClick()">
-            Do košíku
-          </button>
-        </div>
-      </div>
-    </div>
 
     </div>
 </section>
