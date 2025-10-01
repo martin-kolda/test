@@ -3,24 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>no-gap-with-scroll</title>
   <style>
-    html, body { margin: 0; padding: 0; overflow-x: hidden; background:#fafafa; }
-    body { min-height: 100vh; min-height: 100svh; min-height: 100dvh; }
-    main { min-height: 120dvh; padding: 16px; } /* force scroll just to test */
-    /* fixed bar */
-    .bar { position: fixed; left:0; right:0; bottom:0; z-index:50;
-           padding-bottom: env(safe-area-inset-bottom, 0); }
+    /* reset */
+    html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+    /* prefer dynamic viewport units; include fallbacks */
+    body {
+      min-height: 100vh;   /* fallback */
+      min-height: 100svh;  /* iOS small viewport */
+      min-height: 100dvh;  /* modern dynamic viewport */
+      background: #fafafa;
+    }
+
+    main { min-height: 120dvh; padding: 16px; background: #fff; }
   </style>
 </head>
-<body x-data>
+<body>
   <main>
-    <h1>Test</h1>
-    <p>Scroll down — no extra gap should appear in Chrome iOS.</p>
+    <h1>Scroll me</h1>
+    <p>If you can scroll but there’s no extra blank “tail”, we’re good.</p>
   </main>
-  <div class="bar">
-    <div style="background:#fff;border-top:1px solid #ddd;box-shadow:0 -8px 24px rgba(0,0,0,.08);padding:12px 16px;">
-      Fixed CTA
-    </div>
-  </div>
 </body>
 </html>
