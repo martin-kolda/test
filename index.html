@@ -25,7 +25,6 @@
   @keyframes slideInRight { from { transform: translateX( 6%); opacity: .01 } to { transform: translateX(0); opacity: 1 } }
   .slide-in-left  { animation: slideInLeft  .18s ease-out; }
   .slide-in-right { animation: slideInRight .18s ease-out; }    
- 
   body {
       font-family: 'Figtree', sans-serif;
      
@@ -899,7 +898,7 @@
       <a class="link link-hover">Cookie policy</a>
     </nav>
   </footer>
-  <footer class="footer footer-horizontal p-4 pb-24 lg:pb-6 pt-10 lg:pt-4 mx-auto w-11/12 lg:w-10/12 text-base-content">
+  <footer class="footer footer-horizontal p-4 pb-6 lg:pb-6 pt-10 lg:pt-4 mx-auto w-11/12 lg:w-10/12 text-base-content">
     <aside class="w-full">
       <p class="text-sm opacity-70">© 2025 Dr. Max — All rights reserved</p>
   
@@ -1609,8 +1608,8 @@ _onRoute() {
 
 <!-- Panel -->
 <div x-data x-cloak
-     class="fixed inset-y-0 left-0 z-[80] w-screen max-w-full lg:max-w-md bg-base-100 shadow-2xl
-            transform -translate-x-full transition-transform duration-200 ease-out"
+     class="fixed inset-y-0 left-0 z-[80] w-[100dvw] max-w-full lg:max-w-md bg-base-100 shadow-2xl
+     -translate-x-full transform transition-transform duration-200 ease-out"
      :class="{'translate-x-0': $store.menu.open}">
 
 <!-- Top bar -->
