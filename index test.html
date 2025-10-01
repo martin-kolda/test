@@ -1,9 +1,14 @@
 <!doctype html>
 <html style="background-color: green">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <head>
   <meta charset="utf-8" />
   <title>Prototype prototype</title>
+  <style>
+    html, body { height: 100%; margin: 0; overflow-x: hidden; }
+    /* Newer iOS Safari supports this */
+    html, body { overscroll-behavior-y: none; }
+  </style>
 </head>
 <body style="background-color: yellow" x-data="storeApp">
 <!-- PAGE CONTENT -->  
