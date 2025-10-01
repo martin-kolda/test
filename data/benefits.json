@@ -1,0 +1,10 @@
+[
+    { "name": "Benefit Plus - Cafeterie", "available": true},
+    { "name": "Cafeterie Benefity a.s.", "available": true},
+    { "name": "Edenred Benefits Card", "available": true},
+    { "name": "Edenred Cafeterie", "available": true},
+    { "name": "Edenred Card FKSP", "available": true},
+    { "name": "MúzaPay", "available": false},
+    { "name": "Pluxee Flexi / Multi Pass Card", "available": true},
+    { "name": "UP eBenefity", "available": true}
+]
