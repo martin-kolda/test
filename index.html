@@ -680,7 +680,7 @@
           <span class="opacity-50 text-sm">(1)</span>
         </div>
         <div class="collapse-content text-sm">
-          <a class="underline-offset-2 decoration-1 decoration-current hover:underline focus-visible:underline text-secondary font-semibold">PDF</span></a>
+          <a class="underline-offset-2 decoration-1 decoration-current hover:underline focus-visible:underline text-secondary font-semibold">PDF</a>
         </div>
       </div>
 
@@ -824,38 +824,7 @@
    </span>
   </a>
    
-    <!-- Mobile sticky CTA bar -->
-    <div
-      class="fixed inset-x-0 bottom-0 z-50 md:hidden
-            transition-all duration-200
-            ease-out pb-[env(safe-area-inset-bottom)]" 
-      :class="ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'">
 
-      <div class="bg-base-100 border-t border-base-200 shadow-2xl
-                  px-4 py-3
-                  pb-[calc(env(safe-area-inset-bottom,0px)+0.75rem)]">
-        <div class="flex items-center justify-between gap-3">
-          <!-- price -->
-          <div class="flex flex-col leading-tight">
-            <!-- discounted -->
-            <span x-show="hasDiscount()" class="text-lg font-extrabold text-error"
-                  x-text="formatPrice(priceNow())"></span>
-            <span x-show="hasDiscount()" class="text-xs line-through text-base-content/60 -mt-0.5"
-                  x-text="formatPrice(priceOriginal())"></span>
-
-            <!-- regular -->
-            <span x-show="!hasDiscount()" class="text-lg font-extrabold"
-                  x-text="formatPrice(priceOriginal())"></span>
-          </div>
-
-          <!-- CTA -->
-          <button class="btn btn-primary btn-sm min-w-28"
-                  @click="addToCartClick()">
-            Do košíku
-          </button>
-        </div>
-      </div>
-    </div>
 
     </div>
 </section>
@@ -1772,6 +1741,37 @@ _onRoute() {
   </div>
 </div>
 
+    <!-- Mobile sticky CTA bar -->
+    <div
+      class="fixed inset-x-0 bottom-0 z-50 md:hidden
+            transition-all duration-200
+            ease-out pb-[env(safe-area-inset-bottom)]" 
+      :class="ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'">
 
+      <div class="bg-base-100 border-t border-base-200 shadow-2xl
+                  px-4 py-3
+                  pb-[calc(env(safe-area-inset-bottom,0px)+0.75rem)]">
+        <div class="flex items-center justify-between gap-3">
+          <!-- price -->
+          <div class="flex flex-col leading-tight">
+            <!-- discounted -->
+            <span x-show="hasDiscount()" class="text-lg font-extrabold text-error"
+                  x-text="formatPrice(priceNow())"></span>
+            <span x-show="hasDiscount()" class="text-xs line-through text-base-content/60 -mt-0.5"
+                  x-text="formatPrice(priceOriginal())"></span>
+
+            <!-- regular -->
+            <span x-show="!hasDiscount()" class="text-lg font-extrabold"
+                  x-text="formatPrice(priceOriginal())"></span>
+          </div>
+
+          <!-- CTA -->
+          <button class="btn btn-primary btn-sm min-w-28"
+                  @click="addToCartClick()">
+            Do košíku
+          </button>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
