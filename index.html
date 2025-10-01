@@ -29,10 +29,27 @@
       font-family: 'Figtree', sans-serif;
      
     }
+  html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;                 /* page itself doesn't scroll */
+  background: #fff;
+}
+
+#app {
+  height: 100%;
+  overflow: auto;                   /* the only scroller */
+  -webkit-overflow-scrolling: touch;
+  /* Normalize viewport math */
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}  
   </style>
 </head>
 
 <body class="bg-base-200 overflow-x-hidden" x-data="storeApp">
+<div id="app">  
   <!-- TOP-BAR LOGO + SEARCH -->
 <div class="navbar md:p-6 p-2 pt-4 pb-1 bg-base-100 overflow-x-hidden">
   <!-- left: menu + logo + (desktop) search -->
@@ -1772,6 +1789,6 @@ _onRoute() {
   </div>
 </div>
 
-
+</div>
 </body>
 </html>
